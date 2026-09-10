@@ -1,0 +1,41 @@
+{
+  "id": "0be6265b-e419-451f-afd8-2b20942ba2cc",
+  "name": "NSFAgent",
+  "publisher": "Western Computer, INC",
+  "version": "1.0.0.6",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "776834ef-1a06-4ab2-8457-d6657588c809",
+      "name": "Infuzion Accounts Receivable",
+      "publisher": "Infuzion Solutions LLC",
+      "version": "0.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "27.4.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": true,
+    "applyToDevExtension": false
+  },
+  "features": [
+    "NoImplicitWith"
+  ],
+  "resourceFolders": [".resources"],
+  "target": "Cloud"
+}
