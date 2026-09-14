@@ -20,7 +20,7 @@
   ],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "27.4.0.0",
+  "application": "28.4.0.0",
   "idRanges": [
     {
       "from": 50100,
@@ -37,5 +37,6 @@
     "NoImplicitWith"
   ],
   "resourceFolders": [".resources"],
-  "target": "Cloud"
+  "target": "Cloud",
+  "runtime": "17.1"
 }

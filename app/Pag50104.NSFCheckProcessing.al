@@ -67,7 +67,10 @@ page 50104 "NSF Check Processing"
         // Validate inputs
         if CustomerNameOrNumber = '' then begin
             Error('Customer name or number is required.');
+
         end;
+
+
 
         // if CheckNumber = '' then begin
         // Error('Check number is required.');

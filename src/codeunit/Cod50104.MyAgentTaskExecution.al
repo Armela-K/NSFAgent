@@ -47,6 +47,7 @@ codeunit 50104 MyAgentTaskExecution implements IAgentTaskExecution
     begin
         if AgentTaskUserInterventionRequestDetails.Type = AgentTaskUserInterventionRequestDetails.Type::Assistance then begin
             // TODO: Add suggestions for assistance
+
             Suggestions.Summary := SummaryLocalizedLbl;
             Suggestions.Description := DescriptionLocalizedLbl;
             Suggestions.Instructions := SuggestionInstructionsLbl;

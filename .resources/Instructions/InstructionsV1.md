@@ -13,12 +13,7 @@ Customer: C10000
 Check Number: 123456
 
 AUTOMATION RULES
-The agent must execute all steps automatically without requesting confirmation.
-Do not ask the user to approve:
-Locating the payment entry
-Creating the NSF transaction
-Voiding the payment
-Unapplying customer ledger entries
+
 
 If sufficient information exists to uniquely identify a payment, proceed automatically.
 Only stop processing when:
@@ -26,7 +21,7 @@ The customer cannot be identified.
 No matching payment exists.
 Multiple matching entries cannot be resolved using the matching logic.
 Business Central returns a blocking error.
-No user intervention or message lines. When done running just stop the task.
+
 
 **INSTRUCTIONS**:
 
@@ -61,12 +56,14 @@ Common punctuation
 
 If a wildcard search returns multiple customers:
 Search Customer Ledger Entries for the provided Check Number.
+If the check number is not provided, throw an error by flagging a message to the user.
+If check does not exist, ask the user for further input.
 Filter the matching customers to those that have a payment with the specified Check Number.
 If exactly one customer remains, continue processing automatically.
 If multiple customers still remain, select the customer with the closest name match.
 If a unique customer still cannot be determined, return:
 "Multiple customers matched the supplied customer name and check number. No NSF transaction was created."
-Do not request user intervention or customer selection.
+
 
 Locate the customer payment:
 Search Customer Ledger Entries for a payment entry matching:
@@ -74,7 +71,7 @@ Customer Number or Customer Name
 Returned Check Number
 If a unique payment entry is found, continue processing automatically.
 If multiple entries are found, apply the matching logic defined in ERROR HANDLING.
-Do not request user input during payment identification.
+
 
 Process the NSF transaction:
 
@@ -93,8 +90,7 @@ Confirm that all related customer ledger entries have been unapplied.
 ERROR HANDLING
 
 If the customer cannot be found return:"Customer not found. Please verify the customer number or name."
-If the check number cannot be found return: "No payment was found for the specified check number."
-if multiple matching entries are found: Do NOT request user input.
+If the check number cannot be found return: "No payment was found for the specified check number.
 Apply the following matching logic in order:
 Select the entry that matches both:
 Customer Number/Name
@@ -106,4 +102,4 @@ If multiple entries still remain, select the payment entry that:
 
 If a single entry still cannot be determined, stop processing and return: "Multiple payment entries were found for the specified customer and check number. No NSF transaction was created."
 
-If the Create Non-Sufficient Funds action fails: Return the Business Central error message exactly as received. Do not ask the user for additional confirmation.
+If the Create Non-Sufficient Funds action fails: Return the Business Central error message exactly as received. 
